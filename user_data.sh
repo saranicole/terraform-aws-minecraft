@@ -179,6 +179,148 @@ CRON
 eula=true
 EULA
 
+# Update minecraft server properties
+/bin/cat >${mc_root}/server.properties<<SERVER
+#Minecraft server properties
+#Mon Jul 10 00:30:50 UTC 2023
+enable-jmx-monitoring=false
+level-seed=
+rcon.port=25575
+enable-command-block=true
+gamemode=creative
+enable-query=false
+generator-settings={}
+enforce-secure-profile=false
+level-name=world
+motd=Welcome to Minecraft hosted by Saranicole\!
+query.port=25565
+texture-pack=
+pvp=false
+generate-structures=true
+max-chained-neighbor-updates=1000000
+difficulty=easy
+network-compression-threshold=256
+max-tick-time=60000
+require-resource-pack=false
+max-players=4
+use-native-transport=true
+online-mode=true
+enable-status=true
+allow-flight=false
+initial-disabled-packs=
+broadcast-rcon-to-ops=true
+view-distance=10
+max-build-height=256
+server-ip=
+resource-pack-prompt=
+allow-nether=true
+server-port=25565
+enable-rcon=false
+sync-chunk-writes=true
+op-permission-level=4
+prevent-proxy-connections=false
+hide-online-players=false
+resource-pack=
+entity-broadcast-range-percentage=100
+simulation-distance=10
+player-idle-timeout=0
+rcon.password=minecraft
+force-gamemode=false
+rate-limit=0
+hardcore=false
+white-list=true
+broadcast-console-to-ops=true
+spawn-npcs=true
+previews-chat=false
+spawn-animals=true
+snooper-enabled=true
+function-permission-level=2
+initial-enabled-packs=vanilla
+level-type=default
+text-filtering-config=
+spawn-monsters=true
+enforce-whitelist=false
+resource-pack-sha1=
+spawn-protection=16
+max-world-size=10000
+SERVER
+
+# Update minecraft ops
+/bin/cat >${mc_root}/ops.json<<OPS
+[
+  {
+    "uuid": "1b5cef46-14e1-4569-afad-818d9ae4ed45",
+    "name": "nikkiwhitten",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "7fabeb75-cff7-45c7-a342-3643968c6b8c",
+    "name": "HauntedHorse",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "c95695cd-e2f0-4750-aea0-fdddd07abcdc",
+    "name": "saranicole1980",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "be8c067f-f686-4121-9f91-77dab823c697",
+    "name": "BlockLobster12",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "b2350db3-2456-401e-905a-eaf195907591",
+    "name": "Bruns14",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "34331a76-a5f9-4cdc-b699-c23469788d4e",
+    "name": "legendofyoni",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  }
+]
+OPS
+
+# Update minecraft ops
+/bin/cat >${mc_root}/whitelist.json<<WHITELIST
+[
+  {
+    "uuid": "1b5cef46-14e1-4569-afad-818d9ae4ed45",
+    "name": "nikkiwhitten"
+  },
+  {
+    "uuid": "2e587169-3fb7-4e6a-af76-94bbf900fe03",
+    "name": "junipercraft"
+  },
+  {
+    "uuid": "7fabeb75-cff7-45c7-a342-3643968c6b8c",
+    "name": "HauntedHorse"
+  },
+  {
+    "uuid": "c95695cd-e2f0-4750-aea0-fdddd07abcdc",
+    "name": "saranicole1980"
+  },
+  {
+    "uuid": "be8c067f-f686-4121-9f91-77dab823c697",
+    "name": "BlockLobster12"
+  },
+  {
+    "uuid": "b2350db3-2456-401e-905a-eaf195907591",
+    "name": "Bruns14"
+  },
+  {
+    "uuid": "34331a76-a5f9-4cdc-b699-c23469788d4e",
+    "name": "legendofyoni"
+  }
+]
+WHITELIST
+
 # Not root
 /bin/chown -R $SSH_USER ${mc_root}
 

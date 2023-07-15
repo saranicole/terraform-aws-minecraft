@@ -24,6 +24,7 @@ output "public_key" {
 
 output "private_key" {
   value = tls_private_key.ec2_ssh.*.private_key_pem
+
 }
 
 resource "local_file" "private_key" {
@@ -50,5 +51,5 @@ output "ec2_instance_profile" {
 }
 
 output "minecraft_server" {
-  value = "${module.ec2_minecraft[0].public_ip}:${var.mc_port}"
+  value = "${module.ec2_minecraft.public_ip}:${var.mc_port}"
 }
